@@ -46,8 +46,8 @@ http.createServer(function(req, res) {
     notes += "<p>Generated a new " + fileAutoGeneratePath + " file...</p>";
     //pushToGithub();
     //pushToGithubSync();
-    pushToGithubAsync();
-    notes += "<p>Pushed updates to Github...</p>";
+    //pushToGithubAsync();
+    //notes += "<p>Pushed updates to Github...</p>";
 
     //html = html + htmlDocs;
     var finalHtml = htmlDocs.replace(/<!-- pre-notes -->/, notes);
@@ -155,7 +155,7 @@ http.createServer(function(req, res) {
     
   }
 
-}).listen(process.env.PORT);
+}).listen(process.env.PORT || 8989);
 
 String.prototype.regexIndexOf = function(regex, startpos) {
     var indexOf = this.substring(startpos || 0).search(regex);
